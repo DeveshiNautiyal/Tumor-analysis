@@ -6,7 +6,7 @@ Installs PyTorch, PyTorch Geometric (PyG), OpenCV, scikit-image, and other helpe
 
 These are needed to handle deep learning and graph-based operations.
 
-🔹 2. Dataset Handling
+ 2. Dataset Handling
 
 Takes your archive (4).zip dataset.
 
@@ -16,7 +16,7 @@ Extracts it into /content/tumor_dataset.
 
 Inside, the code expects folders like tumor/ and normal/.
 
-🔹 3. Image → Graph Conversion (Superpixels)
+3. Image → Graph Conversion (Superpixels)
 
 Each image is resized to 128x128.
 
@@ -36,13 +36,13 @@ edge_index → graph connections
 
 y → label (0 = normal, 1 = tumor)
 
-🔹 4. Train/Test Split
+4. Train/Test Split
 
 Splits graphs into 80% training and 20% testing.
 
 Loads them into batches using PyG’s DataLoader.
 
-🔹 5. GNN Model (TumorGNN)
+ 5. GNN Model (TumorGNN)
 
 Uses Graph Convolutional Network (GCNConv) layers.
 
@@ -52,7 +52,7 @@ Global mean pooling summarizes node info into a graph-level feature.
 
 A final linear layer predicts whether the graph (image) is tumor or normal.
 
-🔹 6. Training & Testing
+ 6. Training & Testing
 
 Optimizer = Adam with learning rate 0.005.
 
@@ -64,7 +64,7 @@ Each epoch trains the model on training graphs.
 
 Calculates accuracy on both train and test sets.
 
-🔹 7. Output
+ 7. Output
 
 Prints loss + accuracy per epoch.
 
